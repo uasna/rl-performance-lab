@@ -1,0 +1,60 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('rlDesktop', {
+  isElectron: true,
+  getDefaultReplayDirectory: () => ipcRenderer.invoke('desktop:get-default-replay-directory'),
+  getReplayDirectoryStatus: () => ipcRenderer.invoke('desktop:get-replay-directory-status'),
+  useEpicReplayDirectory: () => ipcRenderer.invoke('desktop:use-epic-replay-directory'),
+  scanAllReplayDirectories: () => ipcRenderer.invoke('desktop:scan-all-replay-directories'),
+  getRattletrapStatus: () => ipcRenderer.invoke('desktop:get-rattletrap-status'),
+  selectReplayDirectory: () => ipcRenderer.invoke('desktop:select-replay-directory'),
+  selectRattletrapExecutable: () => ipcRenderer.invoke('desktop:select-rattletrap-executable'),
+  selectRrrocketExecutable: () => ipcRenderer.invoke('desktop:select-rrrocket-executable'),
+  openParsedReplayFolder: () => ipcRenderer.invoke('desktop:open-parsed-replay-folder'),
+  scanReplayFolder: () => ipcRenderer.invoke('desktop:scan-replay-folder'),
+  startReplayWatcher: () => ipcRenderer.invoke('desktop:start-replay-watcher'),
+  stopReplayWatcher: () => ipcRenderer.invoke('desktop:stop-replay-watcher'),
+  analyzeReplayPreview: (replayPath) => ipcRenderer.invoke('desktop:analyze-replay-preview', replayPath),
+  scanRankLog: () => ipcRenderer.invoke('desktop:scan-rank-log'),
+  getStatsApiConfigStatus: () => ipcRenderer.invoke('desktop:get-stats-api-config-status'),
+  selectStatsApiConfig: () => ipcRenderer.invoke('desktop:select-stats-api-config'),
+  configureStatsApi: (payload) => ipcRenderer.invoke('desktop:configure-stats-api', payload),
+  getMmrOcrStatus: () => ipcRenderer.invoke('desktop:get-mmr-ocr-status'),
+  captureMmrScreen: () => ipcRenderer.invoke('desktop:capture-mmr-screen'),
+  saveMmrOcrSample: (payload) => ipcRenderer.invoke('desktop:save-mmr-ocr-sample', payload),
+  openMmrOcrFolder: () => ipcRenderer.invoke('desktop:open-mmr-ocr-folder'),
+  getTrainingPackStatus: () => ipcRenderer.invoke('desktop:get-training-pack-status'),
+  createTrainingPackDraft: (draft) => ipcRenderer.invoke('desktop:create-training-pack-draft', draft),
+  installTrainingPackDraft: (draftFolder) => ipcRenderer.invoke('desktop:install-training-pack-draft', draftFolder),
+  inspectTrainingTemplate: () => ipcRenderer.invoke('desktop:inspect-training-template'),
+  selectMyTrainingDirectory: () => ipcRenderer.invoke('desktop:select-my-training-directory'),
+  selectTrainingTemplateDirectory: () => ipcRenderer.invoke('desktop:select-training-template-directory'),
+  selectRocketRpTrainingCli: () => ipcRenderer.invoke('desktop:select-rocketrp-training-cli'),
+  checkStatsApiPort: (payload) => ipcRenderer.invoke('desktop:check-stats-api-port', payload),
+  startStatsApiStream: (payload) => ipcRenderer.invoke('desktop:start-stats-api-stream', payload),
+  stopStatsApiStream: () => ipcRenderer.invoke('desktop:stop-stats-api-stream'),
+  cleanupGeneratedTrainingPacks: () => ipcRenderer.invoke('desktop:cleanup-generated-training-packs'),
+  rollbackLastTrainingPackInstall: () => ipcRenderer.invoke('desktop:rollback-last-training-pack-install'),
+  openTrainingSafetyBackups: () => ipcRenderer.invoke('desktop:open-training-safety-backups'),
+  openTrainingPackLanding: () => ipcRenderer.invoke('desktop:open-training-pack-landing'),
+  onReplayFileDetected: (handler) => {
+    const listener = (_event, payload) => handler(payload);
+    ipcRenderer.on('replay:file-detected', listener);
+    return () => ipcRenderer.removeListener('replay:file-detected', listener);
+  },
+  onReplayWatcherError: (handler) => {
+    const listener = (_event, payload) => handler(payload);
+    ipcRenderer.on('replay:watcher-error', listener);
+    return () => ipcRenderer.removeListener('replay:watcher-error', listener);
+  },
+  onStatsApiMessage: (handler) => {
+    const listener = (_event, payload) => handler(payload);
+    ipcRenderer.on('stats-api:message', listener);
+    return () => ipcRenderer.removeListener('stats-api:message', listener);
+  },
+  onStatsApiStatus: (handler) => {
+    const listener = (_event, payload) => handler(payload);
+    ipcRenderer.on('stats-api:status', listener);
+    return () => ipcRenderer.removeListener('stats-api:status', listener);
+  },
+});

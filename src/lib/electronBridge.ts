@@ -1,0 +1,573 @@
+export type DesktopReplayFile = {
+  id: string;
+  fileName: string;
+  path: string;
+  sizeBytes: number;
+  modifiedAt: string;
+  status: 'detectado' | 'pendiente' | 'analizando' | 'analizado' | 'convertido' | 'parcial' | 'error';
+  sourceDirectory?: string;
+};
+
+export type ReplayDirectoryCandidate = {
+  path: string;
+  exists: boolean;
+  replayCount: number;
+  preferred: boolean;
+  active: boolean;
+};
+
+export type ReplayDirectoryStatus = ReplayWatcherStatus & {
+  preferredEpicDirectory: string;
+  candidates: ReplayDirectoryCandidate[];
+};
+
+export type ReplayWatcherStatus = {
+  isDesktop: boolean;
+  isWatching: boolean;
+  replayDirectory: string;
+  lastMessage: string;
+  detectedFiles: number;
+};
+
+export type RattletrapStatus = {
+  isAvailable: boolean;
+  executablePath: string;
+  bundledPath: string;
+  source: 'manual' | 'vendor';
+  message: string;
+  rattletrapAvailable?: boolean;
+  rattletrapPath?: string;
+  rattletrapSource?: 'manual' | 'vendor';
+  rrrocketAvailable?: boolean;
+  rrrocketPath?: string;
+  rrrocketBundledPath?: string;
+  rrrocketSource?: 'manual' | 'vendor';
+  activeParser?: 'rattletrap' | 'rrrocket' | 'none';
+};
+
+export type ReplayExtractedPlayer = {
+  id: string;
+  name: string;
+  team: 'Blue' | 'Orange' | 'Unknown';
+  score: number;
+  goals: number;
+  assists: number;
+  saves: number;
+  shots: number;
+  demos: number;
+  source: string;
+};
+
+export type ReplayExtractedEvent = {
+  id: string;
+  type: string;
+  timestampSecond: number;
+  team: 'Blue' | 'Orange' | 'Unknown';
+  playerName: string;
+  description: string;
+  confidence: 'low' | 'medium' | 'high';
+};
+
+export type ReplayExtractedSummary = {
+  metadata: {
+    schema: string;
+    jsonPath: string;
+    jsonSizeBytes: number;
+    topLevelKeys: string[];
+    replayName: string;
+    replayId?: string;
+    matchGuid?: string;
+    mapName: string;
+    playlist: string;
+    date: string;
+    durationSeconds: number;
+  };
+  players: ReplayExtractedPlayer[];
+  score: {
+    blue: number;
+    orange: number;
+    confidence: 'direct' | 'inferred_from_players' | 'unknown';
+  };
+  events: ReplayExtractedEvent[];
+  extractionConfidence: 'low' | 'partial' | 'high';
+  notes: string[];
+};
+
+export type RankLogSnapshot = {
+  id: string;
+  capturedAt: string;
+  playlist: '1v1' | '2v2' | '3v3' | 'Casual' | 'Torneo' | 'Libre';
+  tier: string;
+  division: string;
+  mmr: number;
+  mmrDelta: number;
+  gamesToNextRank: number;
+  progressToNextRank: number;
+  source: 'launch_log';
+};
+
+export type RankLogScanResult = {
+  ok: boolean;
+  scannedAt: string;
+  logPath: string;
+  message: string;
+  snapshots: RankLogSnapshot[];
+  evidenceLines: string[];
+};
+
+
+
+export type StatsApiConfigStatus = {
+  ok: boolean;
+  configured: boolean;
+  configPath: string;
+  port: number;
+  packetSendRate: number;
+  websocketUrl: string;
+  candidates: string[];
+  message: string;
+};
+
+export type StatsApiPortStatus = {
+  ok: boolean;
+  port: number;
+  message: string;
+};
+
+export type StatsApiLiveStatus = {
+  ok: boolean;
+  connected?: boolean;
+  connecting?: boolean;
+  mode?: 'raw-tcp' | 'websocket';
+  host?: string;
+  port: number;
+  message: string;
+  messageCount?: number;
+  at?: string;
+};
+
+export type StatsApiLivePayload = {
+  Event?: string;
+  Data?: unknown;
+};
+
+
+export type MmrOcrStatus = {
+  ok: boolean;
+  message: string;
+  baseDirectory: string;
+  samplesDirectory: string;
+  capturesDirectory: string;
+  sampleCount: number;
+  modelStatus: 'sin_modelo_entrenado' | 'dataset_local_en_crecimiento';
+  samplePath?: string;
+};
+
+export type MmrScreenCapture = {
+  ok: boolean;
+  message: string;
+  dataUrl: string;
+  width: number;
+  height: number;
+  capturedAt: string;
+  filePath?: string;
+};
+
+export type MmrOcrSamplePayload = {
+  id?: string;
+  dataUrl?: string;
+  playlist: '1v1' | '2v2' | '3v3';
+  confirmedMmr: number;
+  tier: string;
+  division: string;
+  roi: { x: number; y: number; width: number; height: number };
+  source: 'manual_confirmed_ocr';
+  notes?: string;
+};
+
+export type TrainingPackTemplate = {
+  id: string;
+  name: string;
+  packRoot: string;
+  myTrainingDirectory: string;
+  fileCount: number;
+  sizeBytes: number;
+  updatedAt: string;
+  source: 'manual' | 'detected' | 'detected-mytraining' | 'detected-downloaded' | 'detected-favorites';
+  templateDirectory?: string;
+  temCount?: number;
+  biggestTemSize?: number;
+};
+
+
+export type TrainingPackTemplateInspection = {
+  ok: boolean;
+  inspectedAt: string;
+  reportPath: string;
+  templateDirectory?: string;
+  rocketRpAvailable?: boolean;
+  selected?: {
+    fileName: string;
+    path: string;
+    sizeBytes: number;
+    modifiedAt: string;
+    rlaGenerated: boolean;
+    rankScore: number;
+    ok: boolean;
+    shotCount: number;
+    message: string;
+  } | null;
+  candidates: Array<{
+    fileName: string;
+    path: string;
+    sizeBytes: number;
+    modifiedAt: string;
+    rlaGenerated: boolean;
+    rankScore: number;
+    ok: boolean;
+    shotCount: number;
+    message: string;
+  }>;
+  knownTextFields?: Array<{ pointer: string; key: string; sample: string }>;
+  nextStep?: string;
+  message: string;
+};
+
+export type TrainingPackInstallStatus = {
+  ok: boolean;
+  message: string;
+  rlaLandingDirectory: string;
+  rocketTrainingRoot: string;
+  myTrainingDirectories: string[];
+  selectedMyTrainingDirectory?: string;
+  selectedTrainingTemplateDirectory?: string;
+  targetMyTrainingDirectory?: string;
+  draftFolders?: string[];
+  latestDraftFolder?: string;
+  draftCount?: number;
+  draftFolder?: string;
+  installedPath?: string;
+  installedMyTrainingPath?: string;
+  installedTemPath?: string;
+  generatedCode?: string;
+  templateAvailable?: boolean;
+  templates?: TrainingPackTemplate[];
+  activeTemplate?: TrainingPackTemplate | null;
+  rocketRpTrainingCliAvailable?: boolean;
+  rocketRpTrainingCliPath?: string;
+  rocketRpTrainingCliBundledPath?: string;
+  rocketRpTrainingCliSource?: 'manual' | 'vendor';
+  exactTemWriterReady?: boolean;
+  exactTemWriterBlockReason?: string;
+  packWorkflowStage?: 'capture_and_seed_only' | 'tem_writer_validation' | 'install_ready';
+  templateInspection?: TrainingPackTemplateInspection;
+  backupRoot?: string;
+  movedTemCount?: number;
+  movedDraftCount?: number;
+  canRollbackLastInstall?: boolean;
+  safetyMode?: 'rla_only_with_rollback';
+  lastTrainingSafety?: {
+    updatedAt?: string;
+    backupRoot?: string;
+    targetMyTrainingDirectory?: string;
+    installedTemPath?: string;
+    manifestPath?: string;
+    generatedCode?: string;
+    generatedTemFileName?: string;
+    mode?: string;
+  } | null;
+  rollbackReport?: { removed?: string[]; warnings?: string[]; reportPath?: string; message?: string };
+};
+
+export type DesktopTrainingPackDraft = {
+  id: string;
+  title: string;
+  createdAt: string;
+  requestType: 'manual' | 'automatic';
+  status: 'draft' | 'staged' | 'installed' | 'blocked';
+  shots: Array<{
+    id: string;
+    replayId: string;
+    replayFileName: string;
+    matchId: string;
+    matchLabel: string;
+    mapName: string;
+    playedAt: string;
+    playerName: string;
+    shotType: string;
+    shotScore: number;
+    reason: string;
+    goals: number;
+    shots: number;
+    estimatedTimestampSecond: number;
+    shotTelemetry?: {
+      event?: string;
+      playerTeamNum?: number;
+      ballLocation?: { x: number; y: number; z: number };
+      impactLocation?: { x: number; y: number; z: number };
+      preHitSpeed?: number;
+      postHitSpeed?: number;
+      goalSpeed?: number;
+      playerSpeed?: number;
+      playerBoost?: number;
+    };
+  }>;
+  sourceReplayIds: string[];
+  note: string;
+};
+
+export type ReplayAnalysisPreview = {
+  replayId: string;
+  fileName: string;
+  replayPath?: string;
+  status: 'pendiente_rattletrap' | 'convertido' | 'analizado' | 'parcial' | 'error';
+  summary: string;
+  rattletrapPath?: string;
+  rrrocketPath?: string;
+  parserUsed?: 'rattletrap' | 'rrrocket' | 'partial';
+  jsonPath?: string;
+  extractedMetrics: {
+    goals: number;
+    assists: number;
+    saves: number;
+    shots: number;
+    demos: number;
+    boostWasted: number;
+    avgSpeed: number;
+    supersonicPercent: number;
+    coastingPercent: number;
+    playerCount?: number;
+    detectedPlayers?: string[];
+    topLevelKeys?: string[];
+    jsonSizeBytes?: number;
+  };
+  replayExtract?: ReplayExtractedSummary;
+  rawPreview?: string;
+  parserDiagnostics?: Array<{
+    attempt: number;
+    parser: string;
+    problem: { kind: string; label: string; detail: string };
+    output: string;
+  }>;
+};
+
+type ElectronBridge = {
+  isElectron: boolean;
+  getDefaultReplayDirectory: () => Promise<string>;
+  getReplayDirectoryStatus: () => Promise<ReplayDirectoryStatus>;
+  useEpicReplayDirectory: () => Promise<ReplayDirectoryStatus>;
+  scanAllReplayDirectories: () => Promise<DesktopReplayFile[]>;
+  getRattletrapStatus: () => Promise<RattletrapStatus>;
+  selectReplayDirectory: () => Promise<ReplayWatcherStatus>;
+  selectRattletrapExecutable: () => Promise<RattletrapStatus>;
+  selectRrrocketExecutable: () => Promise<RattletrapStatus>;
+  openParsedReplayFolder: () => Promise<string>;
+  scanReplayFolder: () => Promise<DesktopReplayFile[]>;
+  startReplayWatcher: () => Promise<ReplayWatcherStatus>;
+  stopReplayWatcher: () => Promise<ReplayWatcherStatus>;
+  analyzeReplayPreview: (replayPath: string) => Promise<ReplayAnalysisPreview>;
+  scanRankLog: () => Promise<RankLogScanResult>;
+  getStatsApiConfigStatus: () => Promise<StatsApiConfigStatus>;
+  selectStatsApiConfig: () => Promise<StatsApiConfigStatus>;
+  configureStatsApi: (payload: { configPath?: string; port: number; packetSendRate: number }) => Promise<StatsApiConfigStatus>;
+  checkStatsApiPort: (payload: { port: number }) => Promise<StatsApiPortStatus>;
+  startStatsApiStream: (payload: { port: number; host?: string }) => Promise<StatsApiLiveStatus>;
+  stopStatsApiStream: () => Promise<StatsApiLiveStatus>;
+  getMmrOcrStatus: () => Promise<MmrOcrStatus>;
+  captureMmrScreen: () => Promise<MmrScreenCapture>;
+  saveMmrOcrSample: (payload: MmrOcrSamplePayload) => Promise<MmrOcrStatus>;
+  openMmrOcrFolder: () => Promise<string>;
+  getTrainingPackStatus: () => Promise<TrainingPackInstallStatus>;
+  createTrainingPackDraft: (draft: DesktopTrainingPackDraft) => Promise<TrainingPackInstallStatus>;
+  installTrainingPackDraft: (draftFolder: string) => Promise<TrainingPackInstallStatus>;
+  inspectTrainingTemplate: () => Promise<TrainingPackInstallStatus>;
+  selectMyTrainingDirectory: () => Promise<TrainingPackInstallStatus>;
+  selectTrainingTemplateDirectory: () => Promise<TrainingPackInstallStatus>;
+  selectRocketRpTrainingCli: () => Promise<TrainingPackInstallStatus>;
+  cleanupGeneratedTrainingPacks: () => Promise<TrainingPackInstallStatus>;
+  rollbackLastTrainingPackInstall: () => Promise<TrainingPackInstallStatus>;
+  openTrainingSafetyBackups: () => Promise<string>;
+  openTrainingPackLanding: () => Promise<string>;
+  onReplayFileDetected: (handler: (payload: DesktopReplayFile) => void) => () => void;
+  onReplayWatcherError: (handler: (payload: { message: string }) => void) => () => void;
+  onStatsApiMessage: (handler: (payload: StatsApiLivePayload) => void) => () => void;
+  onStatsApiStatus: (handler: (payload: StatsApiLiveStatus) => void) => () => void;
+};
+
+declare global {
+  interface Window {
+    rlDesktop?: ElectronBridge;
+  }
+}
+
+export function isElectronRuntime() {
+  return typeof window !== 'undefined' && Boolean(window.rlDesktop?.isElectron);
+}
+
+function requireDesktopBridge() {
+  if (!isElectronRuntime() || !window.rlDesktop) {
+    throw new Error('Esta función requiere la app de escritorio con Electron.');
+  }
+
+  return window.rlDesktop;
+}
+
+export async function getDefaultReplayDirectory() {
+  return requireDesktopBridge().getDefaultReplayDirectory();
+}
+
+export async function getReplayDirectoryStatus() {
+  return requireDesktopBridge().getReplayDirectoryStatus();
+}
+
+export async function useEpicReplayDirectory() {
+  return requireDesktopBridge().useEpicReplayDirectory();
+}
+
+export async function scanAllReplayDirectories() {
+  return requireDesktopBridge().scanAllReplayDirectories();
+}
+
+export async function getRattletrapStatus() {
+  return requireDesktopBridge().getRattletrapStatus();
+}
+
+export async function selectReplayDirectory() {
+  return requireDesktopBridge().selectReplayDirectory();
+}
+
+export async function selectRattletrapExecutable() {
+  return requireDesktopBridge().selectRattletrapExecutable();
+}
+
+export async function selectRrrocketExecutable() {
+  return requireDesktopBridge().selectRrrocketExecutable();
+}
+
+export async function openParsedReplayFolder() {
+  return requireDesktopBridge().openParsedReplayFolder();
+}
+
+export async function scanReplayFolder() {
+  return requireDesktopBridge().scanReplayFolder();
+}
+
+export async function startReplayWatcher() {
+  return requireDesktopBridge().startReplayWatcher();
+}
+
+export async function stopReplayWatcher() {
+  return requireDesktopBridge().stopReplayWatcher();
+}
+
+export async function analyzeReplayPreview(replayPath: string) {
+  return requireDesktopBridge().analyzeReplayPreview(replayPath);
+}
+
+export async function scanRankLog() {
+  return requireDesktopBridge().scanRankLog();
+}
+
+export async function getStatsApiConfigStatus() {
+  return requireDesktopBridge().getStatsApiConfigStatus();
+}
+
+export async function selectStatsApiConfig() {
+  return requireDesktopBridge().selectStatsApiConfig();
+}
+
+export async function configureStatsApi(payload: { configPath?: string; port: number; packetSendRate: number }) {
+  return requireDesktopBridge().configureStatsApi(payload);
+}
+
+export async function checkStatsApiPort(payload: { port: number }) {
+  return requireDesktopBridge().checkStatsApiPort(payload);
+}
+
+export async function startStatsApiStream(payload: { port: number; host?: string }) {
+  return requireDesktopBridge().startStatsApiStream(payload);
+}
+
+export async function stopStatsApiStream() {
+  return requireDesktopBridge().stopStatsApiStream();
+}
+
+export async function getMmrOcrStatus() {
+  return requireDesktopBridge().getMmrOcrStatus();
+}
+
+export async function captureMmrScreen() {
+  return requireDesktopBridge().captureMmrScreen();
+}
+
+export async function saveMmrOcrSample(payload: MmrOcrSamplePayload) {
+  return requireDesktopBridge().saveMmrOcrSample(payload);
+}
+
+export async function openMmrOcrFolder() {
+  return requireDesktopBridge().openMmrOcrFolder();
+}
+
+export async function getTrainingPackStatus() {
+  return requireDesktopBridge().getTrainingPackStatus();
+}
+
+export async function createTrainingPackDraft(draft: DesktopTrainingPackDraft) {
+  return requireDesktopBridge().createTrainingPackDraft(draft);
+}
+
+export async function installTrainingPackDraft(draftFolder: string) {
+  return requireDesktopBridge().installTrainingPackDraft(draftFolder);
+}
+
+export async function inspectTrainingTemplate() {
+  return requireDesktopBridge().inspectTrainingTemplate();
+}
+
+export async function selectMyTrainingDirectory() {
+  return requireDesktopBridge().selectMyTrainingDirectory();
+}
+
+export async function selectTrainingTemplateDirectory() {
+  return requireDesktopBridge().selectTrainingTemplateDirectory();
+}
+
+export async function selectRocketRpTrainingCli() {
+  return requireDesktopBridge().selectRocketRpTrainingCli();
+}
+
+export async function cleanupGeneratedTrainingPacks() {
+  return requireDesktopBridge().cleanupGeneratedTrainingPacks();
+}
+
+export async function rollbackLastTrainingPackInstall() {
+  return requireDesktopBridge().rollbackLastTrainingPackInstall();
+}
+
+export async function openTrainingSafetyBackups() {
+  return requireDesktopBridge().openTrainingSafetyBackups();
+}
+
+export async function openTrainingPackLanding() {
+  return requireDesktopBridge().openTrainingPackLanding();
+}
+
+export function listenReplayFileDetected(handler: (payload: DesktopReplayFile) => void) {
+  if (!isElectronRuntime() || !window.rlDesktop) return () => undefined;
+  return window.rlDesktop.onReplayFileDetected(handler);
+}
+
+export function listenReplayWatcherError(handler: (payload: { message: string }) => void) {
+  if (!isElectronRuntime() || !window.rlDesktop) return () => undefined;
+  return window.rlDesktop.onReplayWatcherError(handler);
+}
+
+export function listenStatsApiMessage(handler: (payload: StatsApiLivePayload) => void) {
+  if (!isElectronRuntime() || !window.rlDesktop) return () => undefined;
+  return window.rlDesktop.onStatsApiMessage(handler);
+}
+
+export function listenStatsApiStatus(handler: (payload: StatsApiLiveStatus) => void) {
+  if (!isElectronRuntime() || !window.rlDesktop) return () => undefined;
+  return window.rlDesktop.onStatsApiStatus(handler);
+}

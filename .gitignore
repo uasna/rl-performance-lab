@@ -1,0 +1,42 @@
+﻿node_modules/
+dist/
+release/
+out/
+build/
+.vite/
+.cache/
+coverage/
+
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+*.zip
+*.7z
+*.rar
+*.msi
+*.exe
+*.nupkg
+
+.DS_Store
+Thumbs.db
+
+# Rocket League local/user data
+*.replay
+Demos/
+DemosEpic/
+Training/
+
+# No subir packs personales por defecto
+*.Tem
+
+# Temporary/debug folders
+tmp/
+temp/
+.temp/
+backups/
+backup/
+rla-phase*/

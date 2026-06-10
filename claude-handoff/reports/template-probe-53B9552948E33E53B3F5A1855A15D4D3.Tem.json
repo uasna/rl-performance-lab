@@ -1,0 +1,38 @@
+{
+  "VersionInfo": {
+    "EngineVersion": 868,
+    "LicenseeVersion": 32,
+    "TypeVersion": 0
+  },
+  "Properties": {},
+  "Objects": [
+    {
+      "ObjectName": "TAGame.TrainingEditorData_TA",
+      "TM_Guid": {
+        "A": 1404654889,
+        "B": 1222852179,
+        "C": -1275747963,
+        "D": 1511380179
+      },
+      "TM_Name": "RLA DIFF B",
+      "Type": "Training_Striker",
+      "MapName": "Stadium_P",
+      "Rounds": [
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:244.9300,\u0022StartLocationY\u0022:4119.3198,\u0022StartLocationZ\u0022:100.4900,\u0022VelocityStartRotationP\u0022:7600,\u0022VelocityStartRotationY\u0022:-16401,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-599.9999,\u0022LocationY\u0022:-700.0001,\u0022LocationZ\u0022:530.0000,\u0022RotationP\u0022:-2712,\u0022RotationY\u0022:11435,\u0022RotationR\u0022:0}"
+          ]
+        }
+      ]
+    }
+  ],
+  "ObjectTypes": [
+    {
+      "Type": "TAGame.TrainingEditorData_TA",
+      "ObjectIndex": 0
+    }
+  ]
+}

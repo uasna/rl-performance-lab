@@ -1,0 +1,151 @@
+{
+  "VersionInfo": {
+    "EngineVersion": 868,
+    "LicenseeVersion": 32,
+    "TypeVersion": 0
+  },
+  "Properties": {},
+  "Objects": [
+    {
+      "ObjectName": "TAGame.TrainingEditorData_TA",
+      "TM_Guid": {
+        "A": 1602502636,
+        "B": 1162433590,
+        "C": 1357205688,
+        "D": 1522103623
+      },
+      "TM_Name": "RLA TEMPLATE 15",
+      "Type": "Training_Striker",
+      "Difficulty": "D_Hard",
+      "MapName": "Park_P",
+      "Rounds": [
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-599.9999,\u0022LocationY\u0022:-700.0001,\u0022LocationZ\u0022:530.0000,\u0022RotationP\u0022:-2730,\u0022RotationY\u0022:11833,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        },
+        {
+          "TimeLimit": 10,
+          "SerializedArchetypes": [
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.Ball.Ball_GameEditor\u0022,\u0022StartLocationX\u0022:0.0000,\u0022StartLocationY\u0022:4120.0000,\u0022StartLocationZ\u0022:100.4872,\u0022VelocityStartRotationP\u0022:8191,\u0022VelocityStartRotationY\u0022:-16384,\u0022VelocityStartRotationR\u0022:0,\u0022VelocityStartSpeed\u0022:1500.0000}",
+            "{\u0022ObjectArchetype\u0022:\u0022Archetypes.GameEditor.DynamicSpawnPointMesh\u0022,\u0022LocationX\u0022:0.0000,\u0022LocationY\u0022:0.0000,\u0022LocationZ\u0022:30.0000,\u0022RotationP\u0022:0,\u0022RotationY\u0022:16384,\u0022RotationR\u0022:0,\u0022VelocityStartSpeed\u0022:0.0000}",
+            "{\u0022IsPC\u0022:true,\u0022LocationX\u0022:-1088.0857,\u0022LocationY\u0022:-167.2575,\u0022LocationZ\u0022:504.6270,\u0022RotationP\u0022:-1959,\u0022RotationY\u0022:9707,\u0022RotationR\u0022:0}"
+          ]
+        }
+      ]
+    }
+  ],
+  "ObjectTypes": [
+    {
+      "Type": "TAGame.TrainingEditorData_TA",
+      "ObjectIndex": 0
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "ok": true,
+  "inspectedAt": "2026-06-10T22:35:09.996Z",
+  "reportPath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\RLA\\training_packs\\_template_inspector\\template-inspection-report.json",
+  "templateDirectory": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining",
+  "rocketRpAvailable": true,
+  "selected": {
+    "fileName": "5F843FEC4549543650E550B85AB97547.Tem",
+    "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\5F843FEC4549543650E550B85AB97547.Tem",
+    "sizeBytes": 10984,
+    "modifiedAt": "2026-06-10T01:42:55.356Z",
+    "rlaGenerated": false,
+    "rankScore": 102236.25062162272,
+    "ok": true,
+    "shotCount": 15,
+    "message": "Plantilla 5F843FEC4549543650E550B85AB97547.Tem: 15 tiros detectados."
+  },
+  "candidates": [
+    {
+      "fileName": "5F843FEC4549543650E550B85AB97547.Tem",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\5F843FEC4549543650E550B85AB97547.Tem",
+      "sizeBytes": 10984,
+      "modifiedAt": "2026-06-10T01:42:55.356Z",
+      "rlaGenerated": false,
+      "rankScore": 102236.25062162272,
+      "ok": true,
+      "shotCount": 15,
+      "message": "Plantilla 5F843FEC4549543650E550B85AB97547.Tem: 15 tiros detectados."
+    },
+    {
+      "fileName": "8FD6CA4E483C682925698AA34D1EE8A4.Tem",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\8FD6CA4E483C682925698AA34D1EE8A4.Tem",
+      "sizeBytes": 2776,
+      "modifiedAt": "2026-02-16T18:04:55.646Z",
+      "rlaGenerated": false,
+      "rankScore": 162776,
+      "ok": true,
+      "shotCount": 3,
+      "message": "Plantilla 8FD6CA4E483C682925698AA34D1EE8A4.Tem: 3 tiros detectados."
+    },
+    {
+      "fileName": "53B9552948E33E53B3F5A1855A15D4D3.Tem",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\53B9552948E33E53B3F5A1855A15D4D3.Tem",
+      "sizeBytes": 1144,
+      "modifiedAt": "2026-06-10T22:14:46.332Z",
+      "rlaGenerated": false,
+      "rankScore": -109979.59110218912,
+      "ok": true,
+      "shotCount": 1,
+      "message": "Plantilla 53B9552948E33E53B3F5A1855A15D4D3.Tem: 1 tiros detectados."
+    },
+    {
+      "fileName": "6243EDA2419D2EF4AA6AF1BF150A95F4.Tem",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\6243EDA2419D2EF4AA6AF1BF150A95F4.Tem",
+      "sizeBytes": 1128,
+      "modifiedAt": "2026-06-10T22:13:41.262Z",
+      "rlaGenerated": false,
+      "rankScore": -109978.50255711263,
+      "ok": true,
+      "shotCount": 1,
+      "message": "Plantilla 6243EDA2419D2EF4AA6AF1BF150A95F4.Tem: 1 tiros detectados."
+    }
+  ],
+  "knownTextFields": [
+    {
+      "pointer": "$.Objects[0].ObjectName",
+      "key": "ObjectName",
+      "sample": "TAGame.TrainingEditorData_TA"
+    },
+    {
+      "pointer": "$.Objects[0].TM_Name",
+      "key": "TM_Name",
+      "sample": "RLA TEMPLATE 15"
+    },
+    {
+      "pointer": "$.Objects[0].MapName",
+      "key": "MapName",
+      "sample": "Park_P"
+    }
+  ],
+  "nextStep": "Plantilla jugable detectada. Crear .Tem seguro intentará roundtrip RocketRP y, si falla, clonará esta plantilla para evitar 0/0.",
+  "message": "Plantilla OK: 5F843FEC4549543650E550B85AB97547.Tem con 15 shots detectados."
+}

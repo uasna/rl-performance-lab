@@ -4949,7 +4949,7 @@ async function capturePrimaryDisplayForOcr() {
     const capturedAt = new Date().toISOString();
     const capturesDirectory = path.join(ensureMmrOcrDirectory(), 'captures');
     const filePath = path.join(capturesDirectory, `mmr-capture-${Date.now()}.png`);
-    const base64 = dataUrl.replace(/^data:image/png;base64,/, '');
+    const base64 = dataUrl.replace(/^data:image\/png;base64,/, '');
     fs.writeFileSync(filePath, Buffer.from(base64, 'base64'));
     return { ok: true, message: 'Captura local guardada. RLA se ocultó brevemente; dejá Rocket League visible detrás para que la muestra sea del juego.', dataUrl, width: size.width, height: size.height, capturedAt, filePath };
   } catch (error) {
@@ -5204,5 +5204,6 @@ ipcMain.handle('desktop:analyze-replay-preview', async (_event, replayPath) => {
     rawPreview,
   };
 });
+
 
 

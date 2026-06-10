@@ -1617,7 +1617,7 @@ function resolveStatsApiConfigPath() {
 
 function getIniSectionLines(content, section) {
   const lines = String(content || '').split(/\r?\n/);
-  const sectionRegex = new RegExp(`^\\s*\\[${section.replace(/[.*+?^${}()|[\]\\]/g, '\$&')}\\]\\s*$`, 'i');
+  const sectionRegex = new RegExp(`^\\s*\\[${section.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\]\\s*$`, 'i');
   const start = lines.findIndex((line) => sectionRegex.test(line));
   if (start < 0) return [];
   const output = [];
@@ -1629,7 +1629,7 @@ function getIniSectionLines(content, section) {
 }
 
 function getIniSectionValue(content, section, key) {
-  const keyRegex = new RegExp(`^\\s*${key.replace(/[.*+?^${}()|[\]\\]/g, '\$&')}\\s*=\\s*(.+?)\\s*$`, 'i');
+  const keyRegex = new RegExp(`^\\s*${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*=\\s*(.+?)\\s*$`, 'i');
   for (const line of getIniSectionLines(content, section)) {
     const match = line.match(keyRegex);
     if (match) return match[1];
@@ -1677,8 +1677,8 @@ function getStatsApiConfigStatus() {
 
 function upsertIniValue(content, section, key, value) {
   const lines = String(content || '').split(/\r?\n/);
-  const sectionRegex = new RegExp(`^\\s*\\[${section.replace(/[.*+?^${}()|[\]\\]/g, '\$&')}\\]\\s*$`, 'i');
-  const keyRegex = new RegExp(`^\\s*${key.replace(/[.*+?^${}()|[\]\\]/g, '\$&')}\\s*=`, 'i');
+  const sectionRegex = new RegExp(`^\\s*\\[${section.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\]\\s*$`, 'i');
+  const keyRegex = new RegExp(`^\\s*${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*=`, 'i');
   let sectionStart = lines.findIndex((line) => sectionRegex.test(line));
   if (sectionStart < 0) {
     if (lines.length && lines[lines.length - 1].trim()) lines.push('');
@@ -3524,7 +3524,7 @@ function clampTrainingValue(value, min, max, fallback) {
 
 function replaceSerializedNumericField(text, key, value, changedPaths, pathLabel) {
   const source = String(text ?? '');
-  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\$&');
+  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(`("${escaped}"\\s*:\\s*)-?\\d+(?:\\.\\d+)?`);
   if (!pattern.test(source)) return source;
   const replacement = `${roundToFixedNumber(value, 4).toFixed(4)}`;
@@ -3535,7 +3535,7 @@ function replaceSerializedNumericField(text, key, value, changedPaths, pathLabel
 
 function replaceSerializedIntegerField(text, key, value, changedPaths, pathLabel) {
   const source = String(text ?? '');
-  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\$&');
+  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(`("${escaped}"\\s*:\\s*)-?\\d+`);
   if (!pattern.test(source)) return source;
   const numeric = Math.round(Number(value));
@@ -3597,7 +3597,7 @@ function formatSameLengthNumberToken(existingToken, desiredValue, fallbackTokens
 
 function replaceSerializedNumericFieldSameLength(text, key, desiredValue, changedPaths, skippedPaths, pathLabel, fallbackTokens = []) {
   const source = String(text ?? '');
-  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\$&');
+  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(`("${escaped}"\\s*:\\s*)(-?\\d+(?:\\.\\d+)?)`);
   const match = source.match(pattern);
   if (!match) {
@@ -3621,7 +3621,7 @@ function replaceSerializedNumericFieldSameLength(text, key, desiredValue, change
 
 function replaceSerializedIntegerFieldSameLength(text, key, desiredValue, changedPaths, skippedPaths, pathLabel, fallbackTokens = []) {
   const source = String(text ?? '');
-  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\$&');
+  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(`("${escaped}"\\s*:\\s*)(-?\\d+)`);
   const match = source.match(pattern);
   if (!match) {
@@ -4923,18 +4923,7 @@ function getMmrOcrStatus(message = 'OCR local preparado. Capturá pantalla post-
 }
 
 async function capturePrimaryDisplayForOcr() {
-  let shouldRestoreWindow = false;
-  let wasMinimized = false;
-
   try {
-    // Phase 48: hide app window before OCR screen capture so the capture sees Rocket League, not RLA.
-    if (mainWindow && !mainWindow.isDestroyed() && mainWindow.isVisible()) {
-      shouldRestoreWindow = true;
-      wasMinimized = mainWindow.isMinimized();
-      mainWindow.hide();
-      await new Promise((resolve) => setTimeout(resolve, 850));
-    }
-
     const sources = await desktopCapturer.getSources({
       types: ['screen'],
       thumbnailSize: { width: 1920, height: 1080 },
@@ -4942,26 +4931,18 @@ async function capturePrimaryDisplayForOcr() {
     });
     const source = sources[0];
     if (!source || source.thumbnail.isEmpty()) {
-      return { ok: false, message: 'No se pudo capturar la pantalla. Probá con Rocket League en modo ventana sin bordes y dejalo visible detrás de RLA.', dataUrl: '', width: 0, height: 0, capturedAt: new Date().toISOString() };
+      return { ok: false, message: 'No se pudo capturar la pantalla. Probá con Rocket League en modo ventana sin bordes.', dataUrl: '', width: 0, height: 0, capturedAt: new Date().toISOString() };
     }
     const dataUrl = source.thumbnail.toDataURL();
     const size = source.thumbnail.getSize();
     const capturedAt = new Date().toISOString();
     const capturesDirectory = path.join(ensureMmrOcrDirectory(), 'captures');
     const filePath = path.join(capturesDirectory, `mmr-capture-${Date.now()}.png`);
-    const base64 = dataUrl.replace(/^data:image/png;base64,/, '');
+    const base64 = dataUrl.replace(/^data:image\/png;base64,/, '');
     fs.writeFileSync(filePath, Buffer.from(base64, 'base64'));
-    return { ok: true, message: 'Captura local guardada. RLA se ocultó brevemente; dejá Rocket League visible detrás para que la muestra sea del juego.', dataUrl, width: size.width, height: size.height, capturedAt, filePath };
+    return { ok: true, message: 'Captura local guardada. Ajustá ROI y confirmá lectura.', dataUrl, width: size.width, height: size.height, capturedAt, filePath };
   } catch (error) {
     return { ok: false, message: error instanceof Error ? error.message : 'Error al capturar pantalla.', dataUrl: '', width: 0, height: 0, capturedAt: new Date().toISOString() };
-  } finally {
-    if (shouldRestoreWindow && mainWindow && !mainWindow.isDestroyed()) {
-      if (wasMinimized) mainWindow.minimize();
-      else {
-        mainWindow.show();
-        mainWindow.focus();
-      }
-    }
   }
 }
 

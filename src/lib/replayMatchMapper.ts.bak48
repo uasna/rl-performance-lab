@@ -45,25 +45,6 @@ function normalizeMode(playlist: string, fallback: GameMode): GameMode {
   return fallback === '1v1' || fallback === '2v2' || fallback === '3v3' ? fallback : '2v2';
 }
 
-
-function inferMatchTypeFromPlaylist(playlist: string): { matchType: RocketLeagueMatch['matchType']; tag: string; confidence: 'alta' | 'media' | 'baja'; note: string } {
-  const value = String(playlist || '').toLowerCase();
-
-  if (/private|custom|exhibition|lan|torneo|tournament/.test(value)) {
-    return { matchType: 'Private', tag: 'match-type:private', confidence: 'alta', note: 'Replay clasificado como privado/torneo por texto de playlist.' };
-  }
-
-  if (/ranked|competitive|competitivo|skill\s*rating|mmr/.test(value)) {
-    return { matchType: 'Ranked', tag: 'match-type:ranked', confidence: 'alta', note: 'Replay clasificado como ranked por señal explícita en metadata.' };
-  }
-
-  if (/casual|unranked|online/.test(value)) {
-    return { matchType: 'Casual', tag: 'match-type:casual', confidence: value.includes('online') && !/casual|unranked/.test(value) ? 'baja' : 'media', note: value.includes('online') && !/casual|unranked/.test(value) ? 'Metadata solo dice Online; se marca Casual con baja confianza porque no hay señal Ranked.' : 'Replay clasificado como casual por metadata.' };
-  }
-
-  return { matchType: 'Replay Review', tag: 'match-type:unclassified', confidence: 'baja', note: 'No hay señal suficiente para distinguir casual/ranked desde el replay.' };
-}
-
 function normalizeReplayDate(dateText: string): string {
   if (!dateText) return new Date().toISOString();
 
@@ -182,7 +163,6 @@ export function buildMatchFromReplayAnalysis(analysis: ReplayAnalysisPreview, pr
   const goalsAgainst = primaryTeam === 'neutral' ? 0 : rivalScore;
   const playedAt = normalizeReplayDate(extract.metadata.date);
   const mode = normalizeMode(extract.metadata.playlist, profile.mainMode);
-  const matchClassification = inferMatchTypeFromPlaylist(extract.metadata.playlist);
   const affectedAreaId = inferAffectedArea(result, primaryPlayer, goalsAgainst);
   const stableReplaySource = getStableReplaySource(analysis);
   const replayMatchId = createReplayId('match-replay', stableReplaySource);
@@ -194,7 +174,7 @@ export function buildMatchFromReplayAnalysis(analysis: ReplayAnalysisPreview, pr
     mapName: extract.metadata.mapName || 'Mapa no detectado',
     mode,
     playlist: extract.metadata.playlist || mode,
-    matchType: matchClassification.matchType,
+    matchType: 'Replay Review',
     result,
     teamColor: primaryTeam,
     durationSeconds: extract.metadata.durationSeconds || 0,
@@ -242,8 +222,8 @@ export function buildMatchFromReplayAnalysis(analysis: ReplayAnalysisPreview, pr
     recommendedFocus: result === 'victoria' ? 'Revisar cómo se generaron los goles y repetir el patrón de presión.' : 'Hacer replay review de los goles concedidos y anotar la primera mala decisión antes del gol.',
     lesson: buildLesson(result, primaryPlayer, goalsAgainst),
     nextTrainingAction: result === 'victoria' ? '10 min de tiros simples + 1 replay review corto para repetir buenas decisiones.' : '15 min replay review + 10 min de defensa con objetivo de no entrar tarde al challenge.',
-    notes: `Importado automáticamente desde replay. ${matchClassification.note} Parser: ${analysis.parserUsed ?? 'rattletrap'}. JSON: ${analysis.jsonPath ?? 'sin ruta'}.`,
-    tags: Array.from(new Set(['replay', 'auto-import', matchClassification.tag, `classification:${matchClassification.confidence}`, extract.metadata.schema || 'rattletrap', extract.metadata.matchGuid ? `match:${extract.metadata.matchGuid}` : '', extract.metadata.replayId ? `replay:${extract.metadata.replayId}` : ''].filter(Boolean))),
+    notes: `Importado automáticamente desde replay. Parser: ${analysis.parserUsed ?? 'rattletrap'}. JSON: ${analysis.jsonPath ?? 'sin ruta'}.`,
+    tags: Array.from(new Set(['replay', 'auto-import', extract.metadata.schema || 'rattletrap', extract.metadata.matchGuid ? `match:${extract.metadata.matchGuid}` : '', extract.metadata.replayId ? `replay:${extract.metadata.replayId}` : ''].filter(Boolean))),
     source: REPLAY_MATCH_SOURCE,
     replayId: extract.metadata.replayId || analysis.replayId,
     replayFileName: analysis.fileName,

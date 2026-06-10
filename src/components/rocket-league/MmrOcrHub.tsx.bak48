@@ -35,27 +35,16 @@ function clampPercent(value: number) {
 
 export function MmrOcrHub({ settings, playlistRanks, onSaveSettings, onSaveRank }: Props) {
   const ocr = { enabled: false, autoPromptAfterMatch: true, playlist: settings.mainPlaylistFilter === '1v1' || settings.mainPlaylistFilter === '2v2' || settings.mainPlaylistFilter === '3v3' ? settings.mainPlaylistFilter : '2v2', roi: DEFAULT_ROI, status: 'sin_configurar' as const, ...(settings.mmrOcr ?? {}) };
-  const initialPlaylist: RankedPlaylist = (ocr.playlist === '1v1' || ocr.playlist === '2v2' || ocr.playlist === '3v3') ? ocr.playlist : '2v2';
-  const initialRank = playlistRanks.find((rank) => rank.playlist === initialPlaylist);
   const [status, setStatus] = useState<MmrOcrStatus | null>(null);
   const [capture, setCapture] = useState<MmrScreenCapture | null>(null);
-  const [playlist, setPlaylist] = useState<RankedPlaylist>(initialPlaylist);
-  const [mmr, setMmr] = useState(String(ocr.lastConfirmedMmr || initialRank?.mmr || ''));
-  const [tier, setTier] = useState(initialRank?.tier || 'Sin rango');
-  const [division, setDivision] = useState(initialRank?.division || 'Sin división');
+  const [playlist, setPlaylist] = useState<RankedPlaylist>((ocr.playlist === '1v1' || ocr.playlist === '2v2' || ocr.playlist === '3v3') ? ocr.playlist : '2v2');
+  const [mmr, setMmr] = useState(String(ocr.lastConfirmedMmr || ''));
+  const [tier, setTier] = useState('Sin rango');
+  const [division, setDivision] = useState('Sin división');
   const [roi, setRoi] = useState(ocr.roi ?? DEFAULT_ROI);
   const [feedback, setFeedback] = useState('');
 
   const currentRank = useMemo(() => playlistRanks.find((rank) => rank.playlist === playlist), [playlistRanks, playlist]);
-
-  function loadPlaylist(nextPlaylist: RankedPlaylist) {
-    const nextRank = playlistRanks.find((rank) => rank.playlist === nextPlaylist);
-    setPlaylist(nextPlaylist);
-    setMmr(nextRank?.mmr ? String(nextRank.mmr) : '');
-    setTier(nextRank?.tier || 'Sin rango');
-    setDivision(nextRank?.division || 'Sin división');
-    onSaveSettings({ mmrOcr: { ...ocr, playlist: nextPlaylist, roi, status: ocr.status } });
-  }
 
   async function refreshStatus() {
     if (!isElectronRuntime()) return;
@@ -169,7 +158,7 @@ export function MmrOcrHub({ settings, playlistRanks, onSaveSettings, onSaveRank 
         <div className="ocr-panel">
           <p className="pdf-card-label">Snapshot MMR</p>
           <div className="ocr-form-grid">
-            <label><span>Playlist</span><select value={playlist} onChange={(event) => loadPlaylist(event.target.value as RankedPlaylist)}>{PLAYLISTS.map((mode) => <option key={mode}>{mode}</option>)}</select></label>
+            <label><span>Playlist</span><select value={playlist} onChange={(event) => setPlaylist(event.target.value as RankedPlaylist)}>{PLAYLISTS.map((mode) => <option key={mode}>{mode}</option>)}</select></label>
             <label><span>MMR leído</span><input value={mmr} onChange={(event) => setMmr(event.target.value)} inputMode="numeric" placeholder="Ej. 1109" /></label>
             <label><span>Rango</span><input value={tier} onChange={(event) => setTier(event.target.value)} placeholder="Champion I" /></label>
             <label><span>División</span><input value={division} onChange={(event) => setDivision(event.target.value)} placeholder="Division II" /></label>

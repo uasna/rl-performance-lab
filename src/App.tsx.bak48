@@ -17,7 +17,6 @@ import { analyzeReplayPreview, isElectronRuntime, startReplayWatcher, type Deskt
 import { buildMatchFromReplayAnalysis } from './lib/replayMatchMapper';
 import { getTrackerAutomationSettings, syncLocalMmrSnapshot } from './components/rocket-league/trackerNetworkAutoSync';
 import { calculateDerivedMetrics } from './lib/calculations';
-import { normalizePlaylistRanks } from './lib/rankSync';
 import {
   formatMMR,
   formatPercent,
@@ -27,27 +26,6 @@ import {
 import type { RocketLeagueDataStore, RocketLeagueMatch, DerivedRocketLeagueMetrics, SkillArea, SkillAreaId, GameMode, RocketLeagueSettings } from './types/rocketLeague';
 
 type ModeFilter = Extract<GameMode, '1v1' | '2v2' | '3v3'> | 'ALL';
-
-function getDashboardRankSnapshot(store: RocketLeagueDataStore, modeFilter: ModeFilter): RocketLeagueDataStore['profile']['rank'] {
-  if (modeFilter === 'ALL') return store.profile.rank;
-
-  const playlistRank = normalizePlaylistRanks(store.playlistRanks).find((rank) => rank.playlist === modeFilter);
-  if (!playlistRank) return { ...store.profile.rank, playlist: modeFilter };
-
-  return {
-    ...store.profile.rank,
-    id: `rank-dashboard-${playlistRank.playlist}`,
-    capturedAt: playlistRank.lastUpdatedAt || store.profile.rank.capturedAt || new Date(0).toISOString(),
-    playlist: playlistRank.playlist,
-    tier: playlistRank.tier || 'Sin rango',
-    division: playlistRank.division || 'Sin división',
-    mmr: Number(playlistRank.mmr) || 0,
-    mmrDelta: Number(playlistRank.mmrDelta) || 0,
-    gamesToNextRank: Number(playlistRank.gamesToNextRank) || 0,
-    progressToNextRank: Math.max(0, Math.min(100, Number(playlistRank.progressToNextRank) || 0)),
-    source: playlistRank.source,
-  };
-}
 
 type AutomationToastState = {
   tone: 'info' | 'success' | 'warning' | 'error';
@@ -85,8 +63,6 @@ export function App() {
   }, []);
 
 
-  const dashboardRank = useMemo(() => getDashboardRankSnapshot(store, modeFilter), [store, modeFilter]);
-
   const filteredMatches = useMemo(() => {
     return store.matches.filter((match) => {
       const matchesMode = modeFilter === 'ALL' || match.mode === modeFilter;
@@ -101,9 +77,8 @@ export function App() {
     profile: {
       ...store.profile,
       mainMode: modeFilter === 'ALL' ? store.profile.mainMode : modeFilter,
-      rank: dashboardRank,
     },
-  }), [dashboardRank, filteredMatches, modeFilter, store]);
+  }), [filteredMatches, modeFilter, store]);
 
   const viewSummary = useMemo(() => calculateDerivedMetrics(viewStore), [viewStore]);
 
@@ -256,7 +231,7 @@ export function App() {
     <AppShell
       activeView={activeView}
       onChangeView={setActiveView}
-      profile={viewStore.profile}
+      profile={store.profile}
       settings={store.settings}
       improvementState={viewSummary.improvementState}
       modeFilter={modeFilter}

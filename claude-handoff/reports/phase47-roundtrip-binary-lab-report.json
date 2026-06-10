@@ -1,0 +1,427 @@
+{
+  "mode": "phase47-roundtrip-binary-lab-v1",
+  "createdAt": "2026-06-10T23:28:30.197Z",
+  "rocketRpPath": "C:\\Program Files\\RL Performance Lab\\resources\\vendor\\rocketrp\\RocketRP.TrainingCLI.exe",
+  "labDirectory": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\RLA\\training_packs\\_phase47_lab",
+  "inputFiles": [
+    {
+      "label": "DIFF_A",
+      "guid": "6243EDA2419D2EF4AA6AF1BF150A95F4",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\6243EDA2419D2EF4AA6AF1BF150A95F4.Tem",
+      "exists": true,
+      "rlaGenerated": false
+    },
+    {
+      "label": "DIFF_B",
+      "guid": "53B9552948E33E53B3F5A1855A15D4D3",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\53B9552948E33E53B3F5A1855A15D4D3.Tem",
+      "exists": true,
+      "rlaGenerated": false
+    },
+    {
+      "label": "TEMPLATE_15",
+      "guid": "5F843FEC4549543650E550B85AB97547",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\5F843FEC4549543650E550B85AB97547.Tem",
+      "exists": true,
+      "rlaGenerated": false
+    },
+    {
+      "label": "RLA_TEMPLATE_15_CLONE",
+      "guid": "42494E5445535420260610154103",
+      "path": "",
+      "exists": false,
+      "rlaGenerated": false
+    },
+    {
+      "label": "SPEEDFLIP_REFERENCE",
+      "guid": "8FD6CA4E483C682925698AA34D1EE8A4",
+      "path": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\8FD6CA4E483C682925698AA34D1EE8A4.Tem",
+      "exists": true,
+      "rlaGenerated": false
+    }
+  ],
+  "roundtripResults": [
+    {
+      "label": "DIFF_A",
+      "sourcePath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\6243EDA2419D2EF4AA6AF1BF150A95F4.Tem",
+      "sourceSize": 1128,
+      "roundtripPath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\RLA\\training_packs\\_phase47_lab\\DIFF_A-roundtrip.Tem",
+      "roundtripSize": 1080,
+      "sameSize": false,
+      "sourceHash": "3de20b997a0fa0895d02af4590f0396155c2022924dcd6b5ffcb28327390eb26",
+      "roundtripHash": "3642797798f0f4f5179f1b1fc3f7bc60c87ed32cf5509ae73e68466bfd88aef9",
+      "sameHash": false,
+      "byteDiffCount": 1106,
+      "changedRangeCount": 6,
+      "firstChangedRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "sourceHex": "60",
+          "roundtripHex": "30"
+        },
+        {
+          "offset": 4,
+          "length": 4,
+          "sourceHex": "8ab2ff2c",
+          "roundtripHex": "ca34007d"
+        },
+        {
+          "offset": 24,
+          "length": 81,
+          "sourceHex": "48186bf0f7903e3a17f89ca0fb17c457f6ad7ad18c6ad939374c3b1c18fac4aa830e49de6f4ed643a9175084daacd79a",
+          "roundtripHex": "82bb9a07671d1d63e0fac00ec60cbe83c05c6d9eee8c2b60d6ffe83b2cb72827115b82ac2e8420dafd2e2b3f0d407493"
+        },
+        {
+          "offset": 106,
+          "length": 92,
+          "sourceHex": "82ac2e8420dafd2e2b3f0d4074930fa940c10c5b4afb12300b543c817f9cd1d86bb5af9980fb143e3c7bffe1ced25a5b",
+          "roundtripHex": "dd855d7bd706c2a29e8c4f99ce3ca16ec19fbb663e0c767f4ab30c96affa32fbba45cf7d5083854e87474b4c365855ce"
+        },
+        {
+          "offset": 199,
+          "length": 113,
+          "sourceHex": "5855ced3c568d157544ee1dab8c4068eb8cfabeec86c9fbfb0e1ad662208a18ea5db5b4c173d1fddc5e79e2ee350ba36",
+          "roundtripHex": "3cf3fd201c8b58a26f42832ada5e957c343f10dbc07a979b5c4bd33c79550558265caccb8ced93b5e7dcab62aba776cd"
+        },
+        {
+          "offset": 313,
+          "length": 815,
+          "sourceHex": "c5b5b3e45395d3cf555cb3415cce7bf6fcbe8d544f4284f3c5734d568b6182e1e3897ec041864a9d1721dd6d7bece21f",
+          "roundtripHex": "1a888378111963994ecd85cdba4c4c9800117f020ead00f047a341c0842b78c45d2f30b275127d445d7e29f6d714e1d4"
+        }
+      ],
+      "sourceRoundsCount": 1,
+      "roundtripRoundsCount": 1,
+      "sourceFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":0.0000,\"StartLocationY\":4120.0000,\"StartLocationZ\":100.4872,\"VelocityStartRotationP\":8191,\"VelocityStartRotationY\":-16384,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":1500.0000}",
+      "roundtripFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":0.0000,\"StartLocationY\":4120.0000,\"StartLocationZ\":100.4872,\"VelocityStartRotationP\":8191,\"VelocityStartRotationY\":-16384,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":1500.0000}",
+      "archetypeSame": true,
+      "archetypeFieldChanges": [],
+      "verdict": "SIZE_CHANGED_ONLY",
+      "error": ""
+    },
+    {
+      "label": "DIFF_B",
+      "sourcePath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\53B9552948E33E53B3F5A1855A15D4D3.Tem",
+      "sourceSize": 1144,
+      "roundtripPath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\RLA\\training_packs\\_phase47_lab\\DIFF_B-roundtrip.Tem",
+      "roundtripSize": 1096,
+      "sameSize": false,
+      "sourceHash": "c5c9184eb9ced82115c9888ddcc03bcb662f2975f075d1f899d25050879dc837",
+      "roundtripHash": "bf1dec84683eb63a66949f9393b13fe7a5ec0cd4e5b29e697a9708e355510c1f",
+      "sameHash": false,
+      "byteDiffCount": 1123,
+      "changedRangeCount": 5,
+      "firstChangedRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "sourceHex": "70",
+          "roundtripHex": "40"
+        },
+        {
+          "offset": 4,
+          "length": 4,
+          "sourceHex": "1d987c0e",
+          "roundtripHex": "dbdb21be"
+        },
+        {
+          "offset": 24,
+          "length": 174,
+          "sourceHex": "5d911a900b4e5637c2cfc405658a0adbf6ad7ad18c6ad939374c3b1c18fac4aa830e49de6f4ed643a9175084daacd79a",
+          "roundtripHex": "65e0f111ff8b9d80cf82aab1fd1a0e73c05c6d9eee8c2b60d6ffe83b2cb72827115b82ac2e8420dafd2e2b3f0d407493"
+        },
+        {
+          "offset": 199,
+          "length": 505,
+          "sourceHex": "58ae90a70f539e3628b6812da08ec8ff72cfabeec86c9fbfb0e1ad662208a18ea5db5b4c173d1fddc5e79e2ee350ba36",
+          "roundtripHex": "3cf3fd201c8b58a26f42832ada5e957c343f10dbc07a979b5c4bd33c79550558265caccb8ced93b5e7dcab62aba776cd"
+        },
+        {
+          "offset": 705,
+          "length": 439,
+          "sourceHex": "ca4c60a0b435764b9ce7d7259fe5f7c1909fa68409a88be3e65e33a1cf42dce0771887dc97586c0a9bec9aae7de568c4",
+          "roundtripHex": "c5838fcae967a009099f62ef7e302e8ce72fe5470437938c778eef2df852b485e0d0b7b004dbd4ea568f4bb01f292d74"
+        }
+      ],
+      "sourceRoundsCount": 1,
+      "roundtripRoundsCount": 1,
+      "sourceFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":244.9300,\"StartLocationY\":4119.3198,\"StartLocationZ\":100.4900,\"VelocityStartRotationP\":7600,\"VelocityStartRotationY\":-16401,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":1500.0000}",
+      "roundtripFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":244.9300,\"StartLocationY\":4119.3198,\"StartLocationZ\":100.4900,\"VelocityStartRotationP\":7600,\"VelocityStartRotationY\":-16401,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":1500.0000}",
+      "archetypeSame": true,
+      "archetypeFieldChanges": [],
+      "verdict": "SIZE_CHANGED_ONLY",
+      "error": ""
+    },
+    {
+      "label": "TEMPLATE_15",
+      "sourcePath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\5F843FEC4549543650E550B85AB97547.Tem",
+      "sourceSize": 10984,
+      "roundtripPath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\RLA\\training_packs\\_phase47_lab\\TEMPLATE_15-roundtrip.Tem",
+      "roundtripSize": 10936,
+      "sameSize": false,
+      "sourceHash": "580523d5391f5ca22d8f952ac3a78816cc49c2f8ef0609c5ffffe87ad12522d8",
+      "roundtripHash": "9e81a2628fed9a65e86e7e6245f8214e0a4d500d3dd7aab17b7e1e786d374b47",
+      "sameHash": false,
+      "byteDiffCount": 10936,
+      "changedRangeCount": 32,
+      "firstChangedRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "sourceHex": "e0",
+          "roundtripHex": "b0"
+        },
+        {
+          "offset": 4,
+          "length": 4,
+          "sourceHex": "177f347c",
+          "roundtripHex": "8437f6a1"
+        },
+        {
+          "offset": 24,
+          "length": 193,
+          "sourceHex": "7312c785dee0265c9c92c63edb4457adf6ad7ad18c6ad939374c3b1c18fac4aa830e49de6f4ed643a9175084daacd79a",
+          "roundtripHex": "cad5a5cc49bc33e8787a1328a97b391bc05c6d9eee8c2b60d6ffe83b2cb72827115b82ac2e8420dafd2e2b3f0d407493"
+        },
+        {
+          "offset": 218,
+          "length": 467,
+          "sourceHex": "b36a6cf47258ea4e1d03e84f9d1132363d59742e50fdcfcf6f08f1e7b5f1c68f63f2d749d592104176831f33affe9e38",
+          "roundtripHex": "740366ec484165d4c896ddaca8757ee4b3eaf9f362e208fee806c8f8096b44aa44c69126a07ddc57ef09983480dec7e2"
+        },
+        {
+          "offset": 686,
+          "length": 257,
+          "sourceHex": "e627215198eb7fb1087be088ba6ebd1b1ebcf3dfe6212ff3984198620345dbc42560f85c0516574107b17e5b058e79e7",
+          "roundtripHex": "241b993170787338df3098620345dbc42560f85c0516574107b12505070179853c71f9e419bd03c5e4ae631e4358c225"
+        },
+        {
+          "offset": 944,
+          "length": 169,
+          "sourceHex": "4f0a36927004a6d772da0120eae94d97b2f8e687992a6743b5c5b9312eb2b8b6c4ca4c60a0b435762adb41e4e68f1a49",
+          "roundtripHex": "9c4a1a36c6c9e30f8a8f650828df947d8697f444e0085b4b9da34689acd79e95411943f1eea00b609d682c8d3abb0ad2"
+        },
+        {
+          "offset": 1114,
+          "length": 29,
+          "sourceHex": "bd92592cebeea53bced510ecba3ed631b7abba37d2f65915505aa1402c",
+          "roundtripHex": "8c49632118408e529b29035e0ea93b42f6ca97b340dfd167ba8ddf8d17"
+        },
+        {
+          "offset": 1144,
+          "length": 496,
+          "sourceHex": "a2cc68990522c080413924cd82ce6719b32a8c49632118408e529b29035e0ea93b42f6ca97b340dfd167ba8ddf8d17e9",
+          "roundtripHex": "8697f292d0d1134c2998a00e2ad51609f17d652352dc265b9a88b773d198f1525dc9fd9613e16fdea2cdfceb503da30a"
+        }
+      ],
+      "sourceRoundsCount": 15,
+      "roundtripRoundsCount": 15,
+      "sourceFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":0.0000,\"StartLocationY\":4120.0000,\"StartLocationZ\":100.4872,\"VelocityStartRotationP\":8191,\"VelocityStartRotationY\":-16384,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":1500.0000}",
+      "roundtripFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":0.0000,\"StartLocationY\":4120.0000,\"StartLocationZ\":100.4872,\"VelocityStartRotationP\":8191,\"VelocityStartRotationY\":-16384,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":1500.0000}",
+      "archetypeSame": true,
+      "archetypeFieldChanges": [],
+      "verdict": "SIZE_CHANGED_ONLY",
+      "error": ""
+    },
+    {
+      "label": "RLA_TEMPLATE_15_CLONE",
+      "sourcePath": "",
+      "sourceSize": 0,
+      "roundtripPath": "",
+      "roundtripSize": 0,
+      "sameSize": false,
+      "sourceHash": "",
+      "roundtripHash": "",
+      "sameHash": false,
+      "byteDiffCount": 0,
+      "changedRangeCount": 0,
+      "firstChangedRanges": [],
+      "sourceRoundsCount": 0,
+      "roundtripRoundsCount": 0,
+      "sourceFirstBallArchetype": "",
+      "roundtripFirstBallArchetype": "",
+      "archetypeSame": false,
+      "archetypeFieldChanges": [],
+      "verdict": "ROUNDTRIP_FAILED",
+      "error": "File not found on disk"
+    },
+    {
+      "label": "SPEEDFLIP_REFERENCE",
+      "sourcePath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\Rocket League\\TAGame\\Training\\0000000000000000\\MyTraining\\8FD6CA4E483C682925698AA34D1EE8A4.Tem",
+      "sourceSize": 2776,
+      "roundtripPath": "C:\\Users\\hecto\\OneDrive\\Documents\\My Games\\RLA\\training_packs\\_phase47_lab\\SPEEDFLIP_REFERENCE-roundtrip.Tem",
+      "roundtripSize": 2728,
+      "sameSize": false,
+      "sourceHash": "b8a4169439aaeb3fd80d1d01266f46e2e31b654dc8704399b6d97f39e0bcf665",
+      "roundtripHash": "131bb552a27817c5c6da71a2ccde2b9d9cf1e98135f830595262689b2af9fb0a",
+      "sameHash": false,
+      "byteDiffCount": 2734,
+      "changedRangeCount": 11,
+      "firstChangedRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "sourceHex": "d0",
+          "roundtripHex": "a0"
+        },
+        {
+          "offset": 4,
+          "length": 4,
+          "sourceHex": "3168282e",
+          "roundtripHex": "4b83909d"
+        },
+        {
+          "offset": 24,
+          "length": 492,
+          "sourceHex": "6a76636ac31dc8d81c4932247efb89eef6ad7ad18c6ad939374c3b1c18fac4aa830e49de6f4ed643a9175084daacd79a",
+          "roundtripHex": "cf4954d4474551dc5c4f2201a232f07234746829509c79ec8e3b3075ee110134bc47d71f7a716e8d8cb33a7bfacc756c"
+        },
+        {
+          "offset": 517,
+          "length": 51,
+          "sourceHex": "0701f4cb9e5a5ef4abb4c5c9c6fd5f51ccbf18c61eb5f090fa4ba817f7990e49c24575c51bfe7b5fe77d233e9a8e8f6a",
+          "roundtripHex": "1f03210a8a4b8428f6bd175b0bab48ff569c7d1c71869ec12bf6287accbbba052fcf975ee0d55d972a9355000833070f"
+        },
+        {
+          "offset": 584,
+          "length": 431,
+          "sourceHex": "1c71869ec12bf6287accbbba052fcf975ee0d55d972a9355000833070f8fbf070a8a4b8428f6bd175b0bab48ff569c7d",
+          "roundtripHex": "b44c6fad249555b2f9d0927538780f2da3cba6d059a78f2710e22022305cd858be095763380c0baf23cfb8cc3750af14"
+        },
+        {
+          "offset": 1016,
+          "length": 232,
+          "sourceHex": "c3979019136456f5c18944f2ae913e70993eabe70b1dd1fd4b1aa36b6d3a62d671607e2e5a0e57bbdb4108a67e8eb1da",
+          "roundtripHex": "082214b1acfacd49463ce62a51dac1f558b8552aadb6edd21fbc29f8216bc117813239c552717c4c1891271778bd75cd"
+        },
+        {
+          "offset": 1249,
+          "length": 261,
+          "sourceHex": "8fc6b358680f5c41a58f710c11bca06e783cf17a970e8ce3c4a2fe9514abaf09deea22bd2fb70eb54f0d72f7cc22705e",
+          "roundtripHex": "af680b7628b029f26e0bddd7eb1c724dd594e4287228317dc22e4450d81fdc9ad10b87d4636c8f7b35b9a9e88837156d"
+        },
+        {
+          "offset": 1511,
+          "length": 229,
+          "sourceHex": "af7081800a9979e80466f56dc7ecc2e6804230c890f7e247c291dd54a9a2513a5b02670e0a98e904cbc57ce4dff52ffd",
+          "roundtripHex": "94be8e62577b2bc7db564690a43362b407741acc508a21e396232940670b484aecc8fd027727a017f87d4a0d11ae7bae"
+        }
+      ],
+      "sourceRoundsCount": 3,
+      "roundtripRoundsCount": 3,
+      "sourceFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":-0.9800,\"StartLocationY\":-5.4400,\"StartLocationZ\":100.0000,\"VelocityStartRotationP\":-999,\"VelocityStartRotationY\":-216503,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":0.0000}",
+      "roundtripFirstBallArchetype": "{\"ObjectArchetype\":\"Archetypes.Ball.Ball_GameEditor\",\"StartLocationX\":-0.9800,\"StartLocationY\":-5.4400,\"StartLocationZ\":100.0000,\"VelocityStartRotationP\":-999,\"VelocityStartRotationY\":-216503,\"VelocityStartRotationR\":0,\"VelocityStartSpeed\":0.0000}",
+      "archetypeSame": true,
+      "archetypeFieldChanges": [],
+      "verdict": "SIZE_CHANGED_ONLY",
+      "error": ""
+    }
+  ],
+  "manualDiff": {
+    "labelA": "DIFF_A",
+    "labelB": "DIFF_B",
+    "sizeA": 1128,
+    "sizeB": 1144,
+    "sizeDelta": 16,
+    "binaryByteDiffCount": 723,
+    "changedRangeCount": 9,
+    "firstChangedRanges": [
+      {
+        "offset": 0,
+        "length": 1,
+        "sourceHex": "60",
+        "roundtripHex": "70"
+      },
+      {
+        "offset": 4,
+        "length": 4,
+        "sourceHex": "8ab2ff2c",
+        "roundtripHex": "1d987c0e"
+      },
+      {
+        "offset": 24,
+        "length": 16,
+        "sourceHex": "48186bf0f7903e3a17f89ca0fb17c457",
+        "roundtripHex": "5d911a900b4e5637c2cfc405658a0adb"
+      },
+      {
+        "offset": 136,
+        "length": 32,
+        "sourceHex": "d1d86bb5af9980fb143e3c7bffe1ced25a5bdd855d7bd706c2a29e8c4f99ce3c",
+        "roundtripHex": "c736628613e6d2c4631a662b1b5894b57fd7b3f640ab1493c198b945bbd7bdf6"
+      },
+      {
+        "offset": 200,
+        "length": 16,
+        "sourceHex": "55ced3c568d157544ee1dab8c4068eb8",
+        "roundtripHex": "ae90a70f539e3628b6812da08ec8ff72"
+      },
+      {
+        "offset": 360,
+        "length": 16,
+        "sourceHex": "1f1a888378111963994ecd85cdba4c4c",
+        "roundtripHex": "5b1c367396d71438a52e08fde1a16752"
+      },
+      {
+        "offset": 456,
+        "length": 32,
+        "sourceHex": "e6ceb52508e8ae753e5381c6616303e1ac62e8e990ebfaf91307b223bd1d1ce7",
+        "roundtripHex": "da2fc5595d9b93a16b221755aff8b237022104fa0129944846f218a2c88d5ac7"
+      },
+      {
+        "offset": 536,
+        "length": 564,
+        "sourceHex": "ed97ac24a7668789a73f2f89b4796ad5f8b98fe5a901687911c9017ab392e7280ca1689d09b21d44c7e43cd274038e59",
+        "roundtripHex": "3bb49c179219d39cfe3288fa273349412cdcf2c5003633b337057d3321a17b12b9b7d57008fbc58530f79fcfb6e43ebc"
+      },
+      {
+        "offset": 1102,
+        "length": 42,
+        "sourceHex": "6c736b361b3a6704e99306fc0c25ff2726281dc0ac595e9ff107",
+        "roundtripHex": "c9b48d758243da5237c904faf4d65142f6a809144a218485541bd4b77af06a273cc48f30b0734668fc46"
+      }
+    ],
+    "jsonDiff": {
+      "ballArchetypeFieldChanges": [
+        {
+          "field": "StartLocationX",
+          "a": 0,
+          "b": 244.93
+        },
+        {
+          "field": "StartLocationY",
+          "a": 4120,
+          "b": 4119.3198
+        },
+        {
+          "field": "StartLocationZ",
+          "a": 100.4872,
+          "b": 100.49
+        },
+        {
+          "field": "VelocityStartRotationP",
+          "a": 8191,
+          "b": 7600
+        },
+        {
+          "field": "VelocityStartRotationY",
+          "a": -16384,
+          "b": -16401
+        }
+      ]
+    }
+  },
+  "hypothesisVerdict": {
+    "roundtripClean": false,
+    "attemptedRoundtrips": 4,
+    "cleanRoundtrips": 0,
+    "sizeChangedRoundtrips": 4,
+    "corruptRoundtrips": 0,
+    "roundtripSizeChange": -48,
+    "conclusion": "PARTIAL_CORRUPTION",
+    "detail": "RocketRP serialize changed binary size/hash while preserving decoded archetype text. Rocket League may still reject due to binary/header/CRC differences.",
+    "recommendedPath": "BINARY_WRITER_NEEDED_OR_HEADER_PATCH"
+  },
+  "safeNextStep": "Investigate first changed ranges and consider header/CRC patch lab; use Template Bank as stable fallback."
+}

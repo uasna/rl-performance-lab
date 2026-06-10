@@ -585,4 +585,3 @@ export function listenStatsApiStatus(handler: (payload: StatsApiLiveStatus) => v
   return window.rlDesktop.onStatsApiStatus(handler);
 }
 
-

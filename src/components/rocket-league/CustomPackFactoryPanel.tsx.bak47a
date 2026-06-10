@@ -306,4 +306,3 @@ function PackQuota({ label, value, hint }: { label: string; value: number | stri
   return <div className="pack-quota"><span>{label}</span><strong>{value}</strong><em>{hint}</em></div>;
 }
 
-

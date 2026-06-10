@@ -5186,4 +5186,3 @@ ipcMain.handle('desktop:analyze-replay-preview', async (_event, replayPath) => {
   };
 });
 
-
